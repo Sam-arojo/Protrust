@@ -153,7 +153,7 @@ function VerifyPage() {
                     </p>
                     <div className="space-y-1.5">
                       <p className="text-sm text-green-800">
-                        <span className="font-medium">Product:</span> {result.productInfo?.productName || 'N/A'}
+                        <span className="font-medium">Product Name:</span> {result.productInfo?.productName || 'N/A'}
                       </p>
                       {result.productInfo?.productCode && (
                         <p className="text-sm text-green-800">
@@ -161,7 +161,7 @@ function VerifyPage() {
                         </p>
                       )}
                       <p className="text-sm text-green-800">
-                        <span className="font-medium">Batch:</span> {result.productInfo?.batchId || 'N/A'}
+                        <span className="font-medium">Batch No:</span> {result.productInfo?.batchId || 'N/A'}
                       </p>
                       {result.productInfo?.manufacturingDate && (
                         <p className="text-sm text-green-800">
@@ -207,7 +207,7 @@ function VerifyPage() {
                     </p>
                     <div className="space-y-1.5">
                       <p className="text-sm text-red-800">
-                        <span className="font-medium">Product:</span> {result.productInfo?.productName || 'N/A'}
+                        <span className="font-medium">Product Name:</span> {result.productInfo?.productName || 'N/A'}
                       </p>
                       {result.productInfo?.productCode && (
                         <p className="text-sm text-red-800">
@@ -215,7 +215,7 @@ function VerifyPage() {
                         </p>
                       )}
                       <p className="text-sm text-red-800">
-                        <span className="font-medium">Batch:</span> {result.productInfo?.batchId || 'N/A'}
+                        <span className="font-medium">Batch No:</span> {result.productInfo?.batchId || 'N/A'}
                       </p>
                       {result.productInfo?.manufacturingDate && (
                         <p className="text-sm text-red-800">
