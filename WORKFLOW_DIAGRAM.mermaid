@@ -1,0 +1,50 @@
+graph TD
+    Start[User Request] --> Auth{Authenticated?}
+    Auth -->|No| Login[Login/Register]
+    Auth -->|Yes| Action{What Action?}
+    
+    Action -->|Create Batch| CG[Code Generation Workflow]
+    Action -->|Verify Product| VW[Verification Workflow]
+    Action -->|View Analytics| Analytics[Analytics Dashboard]
+    
+    CG --> CG1[Step 1: Create Batch Record]
+    CG1 --> CG2[Step 2: Generate Unique Codes]
+    CG2 --> CG3[Step 3: Generate QR Codes]
+    CG3 --> CG4[Step 4: Save to Database]
+    CG4 --> CG5[Step 5: Update Batch Status]
+    CG5 --> CGDone[Return Codes & QR Files]
+    
+    VW --> VW1[Step 1: Validate Code Format]
+    VW1 --> VW2[Step 2: Look Up in Database]
+    VW2 --> VW3{Code Exists?}
+    
+    VW3 -->|No| Invalid[Return: Invalid Code]
+    VW3 -->|Yes| VW4{Code Status?}
+    
+    VW4 -->|Active| VW5[Step 4: Mark as Verified]
+    VW4 -->|Verified| Duplicate[Return: Duplicate Warning]
+    VW4 -->|Flagged| Flagged[Return: Flagged Alert]
+    
+    VW5 --> VW6[Step 5: Log Verification]
+    VW6 --> Success[Return: Success]
+    
+    Login --> Register{New User?}
+    Register -->|Yes| R1[Step 1: Validate Email Domain]
+    R1 --> R2{Corporate Email?}
+    R2 -->|No| Reject[Block Free Providers]
+    R2 -->|Yes| R3[Step 2: Create Account]
+    R3 --> R4[Step 3: Send Verification Email]
+    R4 --> R5[Step 4: Wait Admin Approval]
+    R5 --> LoginDone[Account Ready]
+    
+    Register -->|No| L1[Verify Credentials]
+    L1 --> L2[Generate JWT Token]
+    L2 --> LoginDone
+    
+    style CG fill:#e1f5ff
+    style VW fill:#ffe1e1
+    style Login fill:#e1ffe1
+    style Success fill:#90EE90
+    style Invalid fill:#FFB6C1
+    style Duplicate fill:#FFD700
+    style Reject fill:#FFB6C1
