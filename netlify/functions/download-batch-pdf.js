@@ -143,10 +143,10 @@ function generatePDFHTML(batch, codes) {
       margin: 1px 0;
     }
     .code-card .qr-code img {
-      width: 32px;
-      height: 32px;
+      width: 64px;
+      height: 64px;
       border: 1px solid #d1d5db;
-      border-radius: 2px;
+      border-radius: 1px;
       padding: 1px;
       background: white;
     }
@@ -263,7 +263,7 @@ function generateFirstPageOnly(batch, codes) {
 
 // Generate pages with 100 codes each (5 columns × 20 rows) - NO serial numbers, NO status
 function generateCodePages(codes) {
-  const codesPerPage = 100;
+  const codesPerPage = 50;
   const pages = [];
   let pageNumber = 2; // Start at 2 since page 1 is header
   
