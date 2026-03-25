@@ -114,8 +114,8 @@ function generatePDFHTML(batch, codes) {
     }
     .codes-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1px;
       margin-bottom: 0;
     }
     .code-card {
@@ -143,8 +143,8 @@ function generatePDFHTML(batch, codes) {
       margin: 1px 0;
     }
     .code-card .qr-code img {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       border: 1px solid #d1d5db;
       border-radius: 1px;
       padding: 1px;
@@ -229,7 +229,7 @@ function generateFirstPageOnly(batch, codes) {
   return `
     <div class="first-page-only">
       <div class="first-page-header">
-        <h1>🔒 QualityChek Verification Codes</h1>
+        <h1> QualityChek Verification Codes</h1>
         <p>Anti-Counterfeit Product Verification System</p>
         
         <div class="batch-info-first">
@@ -237,7 +237,7 @@ function generateFirstPageOnly(batch, codes) {
           <p><strong>Product Name:</strong> ${batch.product_name}</p>
           ${batch.product_code ? `<p><strong>Product Code:</strong> ${batch.product_code}</p>` : ''}
           <p><strong>Category:</strong> ${batch.product_category}</p>
-          ${batch.manufacturing_date ? `<p><strong>Manufacturing Date:</strong> ${new Date(batch.manufacturing_date).toLocaleDateString('en-US', { 
+          ${batch.manufacturing_date ? `<p><strong>Mfg Date:</strong> ${new Date(batch.manufacturing_date).toLocaleDateString('en-US', { 
             year: 'numeric', 
             month: 'short', 
             day: 'numeric'
@@ -263,7 +263,7 @@ function generateFirstPageOnly(batch, codes) {
 
 // Generate pages with 100 codes each (5 columns × 20 rows) - NO serial numbers, NO status
 function generateCodePages(codes) {
-  const codesPerPage = 80;
+  const codesPerPage = 84;
   const pages = [];
   let pageNumber = 2; // Start at 2 since page 1 is header
   
