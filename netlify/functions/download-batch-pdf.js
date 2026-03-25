@@ -114,8 +114,8 @@ function generatePDFHTML(batch, codes) {
     }
     .codes-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 1px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
       margin-bottom: 0;
     }
     .code-card {
@@ -263,7 +263,7 @@ function generateFirstPageOnly(batch, codes) {
 
 // Generate pages with 100 codes each (5 columns × 20 rows) - NO serial numbers, NO status
 function generateCodePages(codes) {
-  const codesPerPage = 84;
+  const codesPerPage = 70;
   const pages = [];
   let pageNumber = 2; // Start at 2 since page 1 is header
   
