@@ -263,7 +263,7 @@ function generateFirstPageOnly(batch, codes) {
 
 // Generate pages with 100 codes each (5 columns × 20 rows) - NO serial numbers, NO status
 function generateCodePages(codes) {
-  const codesPerPage = 70;
+  const codesPerPage = 90;
   const pages = [];
   let pageNumber = 2; // Start at 2 since page 1 is header
   
