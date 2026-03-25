@@ -33,7 +33,7 @@ function generatePDFHTML(batch, codes) {
   <style>
     @page {
       size: A4;
-      margin: 5mm;
+      margin: 10mm;
     }
     * {
       margin: 0;
